@@ -15,10 +15,9 @@ class AppDrawer extends StatelessWidget {
               onTap: () =>
                   Navigator.pushReplacementNamed(context, Routes.splash)),
           _createDrawerItem(
-              icon: Icons.attach_money ,
+              icon: Icons.attach_money,
               text: 'Buy',
-              onTap: () =>
-                  Navigator.pushReplacementNamed(context, Routes.buy)),
+              onTap: () => Navigator.pushReplacementNamed(context, Routes.buy)),
           _createDrawerItem(
               icon: Icons.store,
               text: 'Sell',
@@ -32,8 +31,7 @@ class AppDrawer extends StatelessWidget {
           _createDrawerItem(
               icon: Icons.qr_code,
               text: 'QR Reader',
-              onTap: () =>
-                  Navigator.pushReplacementNamed(context, Routes.qr)),
+              onTap: () => Navigator.pushReplacementNamed(context, Routes.qr)),
           Divider(),
           _createDrawerItem(
               icon: Icons.account_circle,
@@ -55,7 +53,15 @@ class AppDrawer extends StatelessWidget {
               text: 'Contact',
               onTap: () =>
                   Navigator.pushReplacementNamed(context, Routes.contact)),
-
+          _createDrawerItem(
+              icon: Icons.supervised_user_circle,
+              text: 'About Us',
+              onTap: () =>
+                  Navigator.pushReplacementNamed(context, Routes.about_us)),
+          Divider(),
+          _createDrawerItem(
+            text: 'App version 0.0.1',
+          )
         ],
       ),
     );
@@ -68,8 +74,7 @@ class AppDrawer extends StatelessWidget {
         decoration: BoxDecoration(
             image: DecorationImage(
                 fit: BoxFit.fill,
-                image: AssetImage('res/images/drawer_header_background.png'))
-        ),
+                image: AssetImage('res/images/drawer_header_background.png'))),
         child: Stack(children: <Widget>[
           Positioned(
               bottom: 12.0,
@@ -78,7 +83,6 @@ class AppDrawer extends StatelessWidget {
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 20.0,
-
                       fontWeight: FontWeight.w500))),
         ]));
   }

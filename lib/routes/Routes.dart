@@ -7,7 +7,7 @@ import 'package:qrpay_app/module/account/account_list_view.dart';
 import 'package:qrpay_app/module/contact/contact_list_view.dart';
 import 'package:qrpay_app/module/help/help_list_view.dart';
 import 'package:qrpay_app/module/receipts/receipts_list_view.dart';
-
+import 'package:qrpay_app/module/about us/about_us_view.dart';
 
 class Routes {
   static const String splash = SplashPage.routeName;
@@ -19,4 +19,5 @@ class Routes {
   static const String contact = ContactPage.routeName;
   static const String help = HelpPage.routeName;
   static const String receipts = ReceiptsPage.routeName;
+  static const String about_us = AboutUsPage.routeName;
 }
