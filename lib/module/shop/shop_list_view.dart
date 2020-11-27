@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qrpay_app/widget/drawer.dart';
 
-
 class ShopPage extends StatelessWidget {
-
   static const String routeName = '/shop';
 
   @override
@@ -11,12 +9,9 @@ class ShopPage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text("Shop"),
+          elevation: 30.0,
         ),
         drawer: AppDrawer(),
-        body: Center(
-            child: Text("Shop")
-        )
-    );
+        body: Center(child: Text("Shop")));
   }
-
 }

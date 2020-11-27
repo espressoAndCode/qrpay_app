@@ -9,6 +9,7 @@ class AboutUsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("About Us"),
+        elevation: 30.0,
       ),
       drawer: AppDrawer(),
       body: Center(
