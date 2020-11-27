@@ -7,13 +7,20 @@ class SplashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("QRPAY Touch-Free"),
-          elevation: 30.0,
-        ),
-        drawer: AppDrawer(),
-        body: new Center(
-            child: new Row(
+      appBar: AppBar(
+        title: Text("QRPAY Touch-Free"),
+        elevation: 30.0,
+        actions: <Widget>[
+          ElevatedButton(
+              onPressed: () {
+                print("High contrast button clicked\nChanging app contrast\n");
+              },
+              child: Text('High Contrast')),
+        ],
+      ),
+      drawer: AppDrawer(),
+      body: new Center(
+        child: new Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             new Container(
@@ -24,6 +31,8 @@ class SplashPage extends StatelessWidget {
               ),
             ),
           ],
-        )));
+        ),
+      ),
+    );
   }
 }
