@@ -10,6 +10,7 @@ import 'module/account/account_list_view.dart';
 import 'module/contact/contact_list_view.dart';
 import 'module/help/help_list_view.dart';
 import 'module/receipts/receipts_list_view.dart';
+import 'module/about us/about_us_view.dart';
 
 import 'module/qr/qr_view.dart';
 
@@ -33,7 +34,9 @@ void main() async {
           Routes.contact: (context) => ContactPage(),
           Routes.help: (context) => HelpPage(),
           Routes.receipts: (context) => ReceiptsPage(),
+          Routes.about_us: (context) => AboutUsPage(),
         },
       )
   );
+
 }
