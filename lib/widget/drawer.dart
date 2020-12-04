@@ -13,7 +13,7 @@ class AppDrawer extends StatelessWidget {
               icon: Icons.house,
               text: 'Home',
               onTap: () =>
-                  Navigator.pushReplacementNamed(context, Routes.splash)),
+                  Navigator.pushReplacementNamed(context, Routes.wrapper)),
           _createDrawerItem(
               icon: Icons.attach_money ,
               text: 'Buy',
