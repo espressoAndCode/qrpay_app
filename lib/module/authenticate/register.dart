@@ -39,7 +39,7 @@ class _RegisterState extends State<Register> {
 
       ),
       body: Container(
-        padding: EdgeInsets.symmetric(vertical: 60, horizontal: 50.0),
+        padding: EdgeInsets.symmetric(vertical: 20, horizontal: 50.0),
         child: Form(
           key: _formKey,
           child: Column(
@@ -47,7 +47,7 @@ class _RegisterState extends State<Register> {
               new Container(
                 child: new Image.asset(
                   'res/images/qplogo.png',
-                  width: MediaQuery.of(context).size.width * .9,
+                  width: MediaQuery.of(context).size.width * .3,
                   fit: BoxFit.cover,
                 ),
               ),
