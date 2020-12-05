@@ -1,15 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:qrpay_app/services/auth.dart';
 import 'package:qrpay_app/widget/drawer.dart';
 
 class HomePage extends StatelessWidget {
 
   static const String routeName = '/home';
+  final AuthService _auth = AuthService();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: Text("QRPAY Touch-Free"),
+          actions: <Widget>[
+            FlatButton.icon(
+                icon: Icon(Icons.person),
+                onPressed: () async {
+                  await _auth.signOut();
+                },
+                label: Text('Logout'))
+          ]
         ),
         drawer: AppDrawer(),
         body: new Center(
