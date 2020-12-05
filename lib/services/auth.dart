@@ -50,20 +50,20 @@ class AuthService {
   }
 
   // register with email and password
-  // Future registerWithEmailAndPassword(String email, String password) async {
-  //   try {
-  //     auth.UserCredential result = await _auth.createUserWithEmailAndPassword(
-  //         email: email, password: password);
-  //     auth.User user = result.user;
-  //     // create a new document for the user with the uid
-  //     await DatabaseService(uid: user.uid).updateUserData(null);
-  //     print('Successfully registered, User UID: ${user.uid}');
-  //     return _userFromFirebaseUser(user);
-  //   } catch (error) {
-  //     print(error.toString());
-  //     return null;
-  //   }
-  // }
+  Future registerWithEmailAndPassword(String email, String password) async {
+    try {
+      auth.UserCredential result = await _auth.createUserWithEmailAndPassword(
+          email: email, password: password);
+      auth.User user = result.user;
+      // create a new document for the user with the uid
+      // await DatabaseService(uid: user.uid).updateUserData(null);
+      print('Successfully registered, User UID: ${user.uid}');
+      return _userFromFirebaseUser(user);
+    } catch (error) {
+      print(error.toString());
+      return null;
+    }
+  }
 
   // sign out
   Future signOut() async {
