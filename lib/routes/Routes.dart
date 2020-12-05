@@ -1,4 +1,5 @@
-import 'package:qrpay_app/module/splash/splash_view.dart';
+import 'package:qrpay_app/module/wrapper.dart';
+import 'package:qrpay_app/module/home/home_view.dart';
 import 'package:qrpay_app/module/buy/buy_list_view.dart';
 import 'package:qrpay_app/module/sell/sell_list_view.dart';
 import 'package:qrpay_app/module/shop/shop_list_view.dart';
@@ -10,7 +11,8 @@ import 'package:qrpay_app/module/receipts/receipts_list_view.dart';
 import 'package:qrpay_app/module/about us/about_us_view.dart';
 
 class Routes {
-  static const String splash = SplashPage.routeName;
+  static const String wrapper = Wrapper.routeName;
+  static const String home = HomePage.routeName;
   static const String buy = BuyPage.routeName;
   static const String sell = SellPage.routeName;
   static const String shop = ShopPage.routeName;

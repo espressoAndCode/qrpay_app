@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "254134365362",
+    "firebase_url": "https://qrpay-touch-free.firebaseio.com",
+    "project_id": "qrpay-touch-free",
+    "storage_bucket": "qrpay-touch-free.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:254134365362:android:0ccad1c634ae35f1a7adab",
+        "android_client_info": {
+          "package_name": "com.example.qrpay_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "254134365362-kv95ns6qlq8vm4kgi0dhfq2nubg4mr0f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9kNfsW8ME25MKOznP-YDlbODPXc5AgsE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "254134365362-kv95ns6qlq8vm4kgi0dhfq2nubg4mr0f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
