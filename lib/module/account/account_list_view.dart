@@ -3,7 +3,8 @@ import 'user.dart';
 import 'package:qrpay_app/widget/config.dart';
 
 import 'package:qrpay_app/widget/drawer.dart';
-import 'package:qrpay_app/module/splash/splash_view.dart';
+// import 'package:qrpay_app/module/splash/splash_view.dart';
+import 'package:qrpay_app/module/wrapper.dart';
 
 class AccountPage extends StatefulWidget {
   static const String routeName = '/account';
@@ -165,7 +166,7 @@ class _AccountPageState extends State<AccountPage> {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (BuildContext context) => SplashPage(),
+                builder: (BuildContext context) => Wrapper(),
               ),
             );
           }
