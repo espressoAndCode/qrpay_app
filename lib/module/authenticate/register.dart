@@ -1,14 +1,17 @@
-import "package:flutter/material.dart";
+import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:qrpay_app/services/auth.dart';
 
-class SignIn extends StatefulWidget {
+class Register extends StatefulWidget {
   final Function toggleView;
-  SignIn({this.toggleView});
+  Register({this.toggleView});
+
   @override
-  _SignInState createState() => _SignInState();
+  _RegisterState createState() => _RegisterState();
 }
 
-class _SignInState extends State<SignIn> {
+class _RegisterState extends State<Register> {
+
   final AuthService _auth = AuthService();
   final _formKey = GlobalKey<FormState>();
 
@@ -21,18 +24,19 @@ class _SignInState extends State<SignIn> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.red[400],
-        elevation: 0.0,
-        title: Text('Sign in to QRPAY'),
+          backgroundColor: Colors.red[400],
+          elevation: 0.0,
+          title: Text('Sign up for QRPAY'),
         actions: <Widget>[
           FlatButton.icon(
             icon: Icon(Icons.person),
-            label: Text('Register'),
+            label: Text('Sign In'),
             onPressed: (){
               widget.toggleView();
             },
           ),
         ],
+
       ),
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 20, horizontal: 50.0),
@@ -58,8 +62,8 @@ class _SignInState extends State<SignIn> {
               ),
               SizedBox(height: 20.0,),
               TextFormField(
-                validator: (val) => val.length < 6 ? 'Password must be at least 6 characters long' : null,
                 obscureText: true,
+                validator: (val) => val.length < 6 ? 'Password must be at least 6 characters long' : null,
                 onChanged: (val) {
                   setState(() {
                     password = val;
@@ -70,15 +74,15 @@ class _SignInState extends State<SignIn> {
               RaisedButton(
                   color: Colors.red[400],
                   child: Text(
-                    'Sign In',
+                    'Register',
                     style: TextStyle(color: Colors.white),
                   ),
                   onPressed: () async {
                     if (_formKey.currentState.validate()) {
-                      dynamic result = await _auth.signInWithEmailAndPassword(email, password);
+                      dynamic result = await _auth.registerWithEmailAndPassword(email, password);
                       if (result == null){
                         setState(() {
-                          error = 'Could not sign in with those credentials.';
+                          error = 'Please supply a valid email.';
                         });
                       }
                     }
