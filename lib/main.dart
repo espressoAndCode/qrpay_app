@@ -17,32 +17,29 @@ import 'module/about us/about_us_view.dart';
 
 import 'module/qr/qr_view.dart';
 
+import 'package:qrpay_app/widget/config.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(
-      StreamProvider<User>.value(
-        value: AuthService().user,
-        child: new MaterialApp(
-          title: 'QRPAY Touch-Free',
-          theme: new ThemeData(
-              primarySwatch: Colors.red
-          ),
-          home: Wrapper(),
-          routes:  {
-            Routes.wrapper: (context) => Wrapper(),
-            Routes.buy: (context) => BuyPage(),
-            Routes.sell: (context) => SellPage(),
-            Routes.shop: (context) => ShopPage(),
-            Routes.qr: (context) => QRPage(),
-            Routes.account: (context) => AccountPage(),
-            Routes.contact: (context) => ContactPage(),
-            Routes.help: (context) => HelpPage(),
-            Routes.receipts: (context) => ReceiptsPage(),
-            Routes.about_us: (context) => AboutUsPage(),
-          },
-        ),
-      )
-  );
-
+  runApp(StreamProvider<User>.value(
+    value: AuthService().user,
+    child: new MaterialApp(
+      title: 'QRPAY Touch-Free',
+      theme: new ThemeData(primarySwatch: Colors.red),
+      home: Wrapper(),
+      routes: {
+        Routes.wrapper: (context) => Wrapper(),
+        Routes.buy: (context) => BuyPage(),
+        Routes.sell: (context) => SellPage(),
+        Routes.shop: (context) => ShopPage(),
+        Routes.qr: (context) => QRPage(),
+        Routes.account: (context) => AccountPage(),
+        Routes.contact: (context) => ContactPage(),
+        Routes.help: (context) => HelpPage(),
+        Routes.receipts: (context) => ReceiptsPage(),
+        Routes.about_us: (context) => AboutUsPage(),
+      },
+    ),
+  ));
 }
