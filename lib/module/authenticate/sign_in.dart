@@ -56,6 +56,9 @@ class _SignInState extends State<SignIn> {
                 height: 20.0,
               ),
               TextFormField(
+                decoration: InputDecoration(
+                  hintText: 'Email',
+                ),
                 validator: (val) => val.isEmpty ? 'Enter an email' : null,
                 onChanged: (val) {
                   setState(() {
@@ -67,6 +70,9 @@ class _SignInState extends State<SignIn> {
                 height: 20.0,
               ),
               TextFormField(
+                decoration: InputDecoration(
+                  hintText: 'Password',
+                ),
                 validator: (val) => val.length < 6
                     ? 'Password must be at least 6 characters long'
                     : null,
