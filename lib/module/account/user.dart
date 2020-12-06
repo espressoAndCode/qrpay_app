@@ -1,10 +1,5 @@
 class User {
-  static const String PassionCooking = 'cooking';
-  static const String PassionHiking = 'hiking';
-  static const String PassionTraveling = 'traveling';
-
   String uid;
-
   String firstName = '';
   String lastName = '';
   String email = '';

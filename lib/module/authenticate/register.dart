@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:qrpay_app/services/auth.dart';
 
 class Register extends StatefulWidget {

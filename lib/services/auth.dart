@@ -3,6 +3,7 @@
 
 import 'package:qrpay_app/module/account/user.dart' as local;
 import 'package:firebase_auth/firebase_auth.dart' as auth;
+import 'package:qrpay_app/services/database.dart';
 
 
 class AuthService {
@@ -55,8 +56,8 @@ class AuthService {
       auth.UserCredential result = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
       auth.User user = result.user;
-      // create a new document for the user with the uid
-      // await DatabaseService(uid: user.uid).updateUserData(null);
+      // create a new document for the user with the uid and defaults
+      await DatabaseService(uid: user.uid).updateUserData('','','','','','','','',true,true);
       print('Successfully registered, User UID: ${user.uid}');
       return _userFromFirebaseUser(user);
     } catch (error) {
