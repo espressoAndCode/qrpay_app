@@ -30,7 +30,7 @@ class ContactPage extends StatelessWidget {
               child: Text(
                 "Contact QRPAY",
                 style: TextStyle(
-                  fontSize: 35,
+                  fontSize: 30,
                   fontWeight: FontWeight.bold,
                   decoration: TextDecoration.underline,
                 ),
@@ -40,17 +40,17 @@ class ContactPage extends StatelessWidget {
               child: Text(
                 "Email:",
                 style: TextStyle(
-                  fontSize: 25,
+                  fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
             Container(
-              padding: EdgeInsets.fromLTRB(20, 0, 20, 30),
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
               child: Text(
                 "help@QRPAY.com",
                 style: TextStyle(
-                  fontSize: 25,
+                  fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -59,7 +59,7 @@ class ContactPage extends StatelessWidget {
               child: Text(
                 "Phone:",
                 style: TextStyle(
-                  fontSize: 25,
+                  fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -69,7 +69,7 @@ class ContactPage extends StatelessWidget {
               child: Text(
                 "123-456-7890",
                 style: TextStyle(
-                  fontSize: 25,
+                  fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -79,7 +79,7 @@ class ContactPage extends StatelessWidget {
               child: Text(
                 "Message",
                 style: TextStyle(
-                  fontSize: 25,
+                  fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
