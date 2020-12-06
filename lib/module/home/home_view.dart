@@ -19,11 +19,20 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(title: Text("QRPAY Touch-Free"), actions: <Widget>[
         FlatButton.icon(
-            icon: Icon(Icons.person),
-            onPressed: () async {
-              await _auth.signOut();
-            },
-            label: Text('Logout'))
+          icon: Icon(
+            Icons.person,
+            color: Colors.white,
+          ),
+          onPressed: () async {
+            await _auth.signOut();
+          },
+          label: Text(
+            'Logout',
+            style: TextStyle(
+              color: Colors.white,
+            ),
+          ),
+        )
       ]),
       drawer: AppDrawer(),
       body: new Center(
