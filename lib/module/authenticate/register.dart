@@ -11,7 +11,6 @@ class Register extends StatefulWidget {
 }
 
 class _RegisterState extends State<Register> {
-
   final AuthService _auth = AuthService();
   final _formKey = GlobalKey<FormState>();
 
@@ -24,19 +23,18 @@ class _RegisterState extends State<Register> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-          backgroundColor: Colors.red[400],
-          elevation: 0.0,
-          title: Text('Sign up for QRPAY'),
+        backgroundColor: Colors.red[400],
+        elevation: 0.0,
+        title: Text('Sign up for QRPAY'),
         actions: <Widget>[
           FlatButton.icon(
-            icon: Icon(Icons.person),
+            icon: Icon(Icons.person, color: Colors.white),
             label: Text('Sign In'),
-            onPressed: (){
+            onPressed: () {
               widget.toggleView();
             },
           ),
         ],
-
       ),
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 20, horizontal: 50.0),
@@ -51,7 +49,9 @@ class _RegisterState extends State<Register> {
                   fit: BoxFit.cover,
                 ),
               ),
-              SizedBox(height: 20.0,),
+              SizedBox(
+                height: 20.0,
+              ),
               TextFormField(
                 validator: (val) => val.isEmpty ? 'Enter an email' : null,
                 onChanged: (val) {
@@ -60,17 +60,23 @@ class _RegisterState extends State<Register> {
                   });
                 },
               ),
-              SizedBox(height: 20.0,),
+              SizedBox(
+                height: 20.0,
+              ),
               TextFormField(
                 obscureText: true,
-                validator: (val) => val.length < 6 ? 'Password must be at least 6 characters long' : null,
+                validator: (val) => val.length < 6
+                    ? 'Password must be at least 6 characters long'
+                    : null,
                 onChanged: (val) {
                   setState(() {
                     password = val;
                   });
                 },
               ),
-              SizedBox(height: 20.0,),
+              SizedBox(
+                height: 20.0,
+              ),
               RaisedButton(
                   color: Colors.red[400],
                   child: Text(
@@ -79,8 +85,9 @@ class _RegisterState extends State<Register> {
                   ),
                   onPressed: () async {
                     if (_formKey.currentState.validate()) {
-                      dynamic result = await _auth.registerWithEmailAndPassword(email, password);
-                      if (result == null){
+                      dynamic result = await _auth.registerWithEmailAndPassword(
+                          email, password);
+                      if (result == null) {
                         setState(() {
                           error = 'Please supply a valid email.';
                         });
@@ -92,7 +99,6 @@ class _RegisterState extends State<Register> {
                 error,
                 style: TextStyle(color: Colors.red, fontSize: 14.0),
               ),
-
             ],
           ),
         ),

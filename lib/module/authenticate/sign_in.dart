@@ -26,9 +26,14 @@ class _SignInState extends State<SignIn> {
         title: Text('Sign in to QRPAY'),
         actions: <Widget>[
           FlatButton.icon(
-            icon: Icon(Icons.person),
-            label: Text('Register'),
-            onPressed: (){
+            icon: Icon(Icons.person, color: Colors.white),
+            label: Text(
+              'Register',
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
+            onPressed: () {
               widget.toggleView();
             },
           ),
@@ -47,7 +52,9 @@ class _SignInState extends State<SignIn> {
                   fit: BoxFit.cover,
                 ),
               ),
-              SizedBox(height: 20.0,),
+              SizedBox(
+                height: 20.0,
+              ),
               TextFormField(
                 validator: (val) => val.isEmpty ? 'Enter an email' : null,
                 onChanged: (val) {
@@ -56,9 +63,13 @@ class _SignInState extends State<SignIn> {
                   });
                 },
               ),
-              SizedBox(height: 20.0,),
+              SizedBox(
+                height: 20.0,
+              ),
               TextFormField(
-                validator: (val) => val.length < 6 ? 'Password must be at least 6 characters long' : null,
+                validator: (val) => val.length < 6
+                    ? 'Password must be at least 6 characters long'
+                    : null,
                 obscureText: true,
                 onChanged: (val) {
                   setState(() {
@@ -66,7 +77,9 @@ class _SignInState extends State<SignIn> {
                   });
                 },
               ),
-              SizedBox(height: 20.0,),
+              SizedBox(
+                height: 20.0,
+              ),
               RaisedButton(
                   color: Colors.red[400],
                   child: Text(
@@ -75,8 +88,9 @@ class _SignInState extends State<SignIn> {
                   ),
                   onPressed: () async {
                     if (_formKey.currentState.validate()) {
-                      dynamic result = await _auth.signInWithEmailAndPassword(email, password);
-                      if (result == null){
+                      dynamic result = await _auth.signInWithEmailAndPassword(
+                          email, password);
+                      if (result == null) {
                         setState(() {
                           error = 'Could not sign in with those credentials.';
                         });
@@ -88,7 +102,6 @@ class _SignInState extends State<SignIn> {
                 error,
                 style: TextStyle(color: Colors.red, fontSize: 14.0),
               ),
-
             ],
           ),
         ),
