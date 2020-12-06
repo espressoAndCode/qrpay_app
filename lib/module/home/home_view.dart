@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:qrpay_app/services/auth.dart';
 import 'package:qrpay_app/widget/drawer.dart';
+import 'package:qrpay_app/module/qr/qr_view.dart';
+import 'package:qrpay_app/module/sell/sell_list_view.dart';
 
 class HomePage extends StatefulWidget {
   static const String routeName = '/home';
@@ -15,17 +17,17 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text("QRPAY Touch-Free"), actions: <Widget>[
-          FlatButton.icon(
-              icon: Icon(Icons.person),
-              onPressed: () async {
-                await _auth.signOut();
-              },
-              label: Text('Logout'))
-        ]),
-        drawer: AppDrawer(),
-        body: new Center(
-            child: new Row(
+      appBar: AppBar(title: Text("QRPAY Touch-Free"), actions: <Widget>[
+        FlatButton.icon(
+            icon: Icon(Icons.person),
+            onPressed: () async {
+              await _auth.signOut();
+            },
+            label: Text('Logout'))
+      ]),
+      drawer: AppDrawer(),
+      body: new Center(
+        child: new Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             new Container(
@@ -36,6 +38,61 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ],
-        )));
+        ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.red,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.qr_code,
+              color: Colors.white,
+            ),
+            // label: 'Scan QR Code',
+            title: Text(
+              'Scan QR Code',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 15.0,
+              ),
+            ),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.attach_money,
+              color: Colors.white,
+            ),
+            // label: 'Sell',
+            title: Text(
+              'Sell',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 15.0,
+              ),
+            ),
+          ),
+        ],
+        onTap: (index) {
+          if (index == 0) {
+            print("Going to QR code");
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (BuildContext context) => QRPage(),
+              ),
+            );
+          }
+          if (index == 1) {
+            print("Going to Sell");
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (BuildContext context) => SellPage(),
+              ),
+            );
+          }
+        },
+      ),
+    );
   }
 }
