@@ -1,23 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:qrpay_app/widget/drawer.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
-
-
+// import 'package:qrpay_app/module/splash/splash_view.dart';
+import 'package:qrpay_app/module/wrapper.dart';
 
 class QRPage extends StatefulWidget {
   static const String routeName = '/qr_reader';
   const QRPage({
-  Key key,
+    Key key,
   }) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _QRPageState();
 }
 
-
-
 class _QRPageState extends State<QRPage> {
-
   static const flashOn = 'FLASH ON';
   static const flashOff = 'FLASH OFF';
   static const frontCamera = 'FRONT CAMERA';
@@ -81,7 +78,7 @@ class _QRPageState extends State<QRPage> {
                             }
                           },
                           child:
-                          Text(flashState, style: TextStyle(fontSize: 20)),
+                              Text(flashState, style: TextStyle(fontSize: 20)),
                         ),
                       ),
                       Container(
@@ -102,7 +99,7 @@ class _QRPageState extends State<QRPage> {
                             }
                           },
                           child:
-                          Text(cameraState, style: TextStyle(fontSize: 20)),
+                              Text(cameraState, style: TextStyle(fontSize: 20)),
                         ),
                       )
                     ],
@@ -136,6 +133,21 @@ class _QRPageState extends State<QRPage> {
             ),
           )
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        tooltip: 'Click it to return to the Homepage',
+        hoverElevation: 50,
+        onPressed: () {
+          print("Going back to homepage");
+          // controller.pauseCamera();
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (BuildContext context) => Wrapper(),
+            ),
+          );
+        },
+        child: Icon(Icons.home),
       ),
     );
   }
