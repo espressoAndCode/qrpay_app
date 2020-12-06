@@ -26,7 +26,7 @@ class HelpPage extends StatelessWidget {
           children: [
             Container(
               // alignment: Alignment.center,
-              padding: EdgeInsets.fromLTRB(20, 30, 20, 30),
+              padding: EdgeInsets.fromLTRB(20, 10, 20, 30),
               child: Text(
                 "QRPAY Help",
                 style: TextStyle(
@@ -49,7 +49,7 @@ class HelpPage extends StatelessWidget {
             ),
             Container(
               alignment: Alignment.centerLeft,
-              padding: EdgeInsets.fromLTRB(40, 10, 20, 20),
+              padding: EdgeInsets.fromLTRB(40, 5, 20, 20),
               child: Text(
                 "2. Connect pay account",
                 style: TextStyle(
