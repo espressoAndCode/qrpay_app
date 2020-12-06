@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qrpay_app/widget/drawer.dart';
-import 'package:qrpay_app/module/splash/splash_view.dart';
+// import 'package:qrpay_app/module/splash/splash_view.dart';
+import 'package:qrpay_app/module/wrapper.dart';
 
 class HelpPage extends StatelessWidget {
   static const String routeName = '/help';
@@ -156,7 +157,7 @@ class HelpPage extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (BuildContext context) => SplashPage(),
+              builder: (BuildContext context) => Wrapper(),
             ),
           );
         },
