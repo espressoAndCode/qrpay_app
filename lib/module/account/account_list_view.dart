@@ -36,6 +36,8 @@ class _AccountPageState extends State<AccountPage> {
         drawer: AppDrawer(),
         body: Center(
 
+
+
           child: Column(
             // mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -43,6 +45,7 @@ class _AccountPageState extends State<AccountPage> {
                 child: AccountData(),
               ),
               Container(
+
 
                 // alignment: Alignment.center,
                 padding: EdgeInsets.fromLTRB(20, 10, 20, 20),

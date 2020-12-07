@@ -11,7 +11,12 @@ class _AccountDataState extends State<AccountData> {
   @override
   Widget build(BuildContext context) {
     final userData = Provider.of<QuerySnapshot>(context);
-    print(userData);
+    print("Context: ${context}");
+    // print(userData.docs);
+    // ignore: deprecated_member_use
+    for (var doc in userData.docs) {
+      print(doc.toString() );
+    }
 
     return Container();
   }

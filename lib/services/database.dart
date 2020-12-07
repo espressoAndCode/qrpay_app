@@ -1,4 +1,6 @@
 import "package:cloud_firestore/cloud_firestore.dart";
+import 'package:qrpay_app/module/account/user.dart';
+import 'package:qrpay_app/module/account/user_instance.dart';
 
 class DatabaseService {
 
@@ -6,8 +8,10 @@ class DatabaseService {
   DatabaseService({ this.uid});
 
   //collection reference
-  final CollectionReference userAccountsCollection = FirebaseFirestore.instance.collection(
+  final CollectionReference userAccountCollection = FirebaseFirestore.instance.collection(
       'accounts');
+
+
 
   Future updateUserData(
       String firstName,
@@ -20,7 +24,7 @@ class DatabaseService {
       String zip,
       bool transactionAlert,
       bool accountChangeAlert) async {
-      return await userAccountsCollection.doc(uid).set({
+      return await userAccountCollection.doc(uid).set({
         'firstName': firstName,
         'lastName': lastName,
         'email': email,
@@ -33,10 +37,33 @@ class DatabaseService {
         'accountChangeAlert': accountChangeAlert
       });
   }
+  //
+  // List<User> _userListFromSnapshot(QuerySnapshot snapshot) {
+  //   return snapshot.docs.map((doc){
+  //     print(doc);
+  //     // return UserInstance(
+  //     //     firstName: doc.data['firstName'] ?? '',
+  //     //     lastName: doc.data['firstName'] ?? '',
+  //     //     email: doc.data['firstName'] ?? '',
+  //     //     phone: doc.data['firstName'] ?? '',
+  //     //     street: doc.data['firstName'] ?? '',
+  //     //     city: doc.data['firstName'] ?? '',
+  //     //     state: doc.data['firstName'] ?? '',
+  //     //     zip: doc.data['firstName'] ?? '',
+  //     //     transactionAlert: doc.data['firstName'] ?? '',
+  //     //     accountChangeAlert: doc.data['firstName'] ?? ''
+  //     // )
+  //   })
+  // }
+  //
+  //
+
+
+
 
   //get user data stream
   Stream<QuerySnapshot> get userData {
-    return userAccountsCollection.snapshots();
+    return userAccountCollection.snapshots();
   }
 
 
