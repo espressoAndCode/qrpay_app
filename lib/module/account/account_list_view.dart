@@ -20,7 +20,6 @@ class _AccountPageState extends State<AccountPage> {
 
   @override
   Widget build(BuildContext context) {
-
     return StreamProvider<QuerySnapshot>.value(
       value: DatabaseService().userData,
       child: Scaffold(
@@ -36,8 +35,6 @@ class _AccountPageState extends State<AccountPage> {
         drawer: AppDrawer(),
         body: Center(
 
-
-
           child: Column(
             // mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -45,7 +42,6 @@ class _AccountPageState extends State<AccountPage> {
                 child: AccountData(),
               ),
               Container(
-
 
                 // alignment: Alignment.center,
                 padding: EdgeInsets.fromLTRB(20, 10, 20, 20),
@@ -104,7 +100,7 @@ class _AccountPageState extends State<AccountPage> {
                   Container(
                     margin: EdgeInsets.all(25),
                     child: FractionallySizedBox(
-                      widthFactor: 0.5,
+                      widthFactor: 1,
                       child: FlatButton(
                         child: Text(
                           'Link Payment Account',
@@ -119,7 +115,7 @@ class _AccountPageState extends State<AccountPage> {
                   Container(
                     margin: EdgeInsets.all(25),
                     child: FractionallySizedBox(
-                      widthFactor: 0.5,
+                      widthFactor: 1,
                       child: FlatButton(
                         child: Text(
                           'Link Sales Account',
